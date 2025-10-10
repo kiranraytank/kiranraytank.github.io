@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kiran Tank — Portfolio</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Portfolio of Kiran Tank — Web Developer & AI Automation Engineer specializing in Node.js, PHP, Laravel, Python, and workflow automation.">
+  <meta name="keywords" content="Kiran Tank, Web Developer, AI Automation Engineer, PHP, Node.js, Laravel, Automation, Make.com, n8n, Portfolio">
+  <meta name="author" content="Kiran Tank">
+  <link rel="icon" href="assets/meta-bar-icon.png" type="image/jpeg">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Reset & Global */
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Poppins',sans-serif; background:#f8f9fb; color:#222; line-height:1.6; scroll-behavior:smooth; }
+    a { text-decoration:none; color:#6a4eff; }
+    a:hover { text-decoration:underline; }
+
+    /* Header */
+    header{
+      background:linear-gradient(135deg,#6a4eff,#9c6df0);
+      color:white;
+      text-align:center;
+      padding:60px 20px 100px;
+      position:relative;
+    }
+    header .avatar{
+      width:130px;height:130px;border-radius:50%;
+      background:url('assets/avatar.jpg') center/cover no-repeat;
+      margin:0 auto 18px;
+      border:4px solid #fff;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+    }
+    header h1{font-size:30px;margin-bottom:8px}
+    header p{font-size:15px;color:#eaeaea}
+
+    nav{
+      position:absolute;bottom:10px;left:0;right:0;
+      display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
+    }
+    nav a{
+      color:white;font-weight:500;font-size:15px;
+      padding:8px 12px;border-radius:4px;
+      transition:all 0.3s ease;
+    }
+    nav a:hover{
+      background:rgba(255,255,255,0.2);
+      transform:translateY(-2px);
+    }
+
+    /* Sections */
+    section{max-width:850px;margin:60px auto;padding:0 20px}
+    h2{
+      color:#6a4eff;
+      font-size:22px;
+      border-left:4px solid #6a4eff;
+      padding-left:10px;
+      margin-bottom:15px;
+    }
+    .section-card{
+      background:#fff;
+      border:1px solid #eee;
+      padding:20px;
+      border-radius:8px;
+      margin-bottom:30px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.04);
+    }
+
+    /* About */
+    #about p{margin-bottom:10px}
+
+    /* Projects */
+    .project{
+      margin-bottom:18px;
+      padding-bottom:12px;
+      border-bottom:1px dashed #e2e2e2;
+    }
+    .project:last-child{border:none}
+    .project h3{margin-bottom:4px;font-size:18px}
+    .project span{color:#666;font-size:14px}
+    .project a{
+      color:#6a4eff;
+      font-weight:500;
+      transition:0.3s;
+    }
+    .project a:hover{
+      color:#563dd6;
+      text-decoration:underline;
+    }
+
+    /* Skills */
+    ul.skills{list-style:disc;margin-left:22px;color:#333}
+    ul.skills li{margin-bottom:6px}
+
+    /* Employment */
+    .job{margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed #e2e2e2}
+    .job:last-child{border:none}
+    .job h4{margin-bottom:4px}
+    .muted{color:#666;font-size:14px}
+
+    /* Contact Form */
+    form{margin-top:14px}
+    .form-field{margin-bottom:14px;display:flex;flex-direction:column}
+    label{font-weight:500;margin-bottom:4px}
+    input,textarea{
+      padding:10px;border:1px solid #ccc;border-radius:5px;font-family:inherit
+    }
+    textarea{resize:vertical;height:120px}
+    button{
+      background:#6a4eff;color:#fff;border:none;
+      padding:10px 20px;border-radius:6px;
+      cursor:pointer;font-weight:600;
+      transition:0.3s ease;
+    }
+    button:hover{background:#563dd6;transform:translateY(-2px);}
+    #formStatus{margin-top:8px;font-size:14px}
+
+    /* Footer */
+    footer{
+      background:#fff;
+      border-top:1px solid #eee;
+      padding:30px 20px;
+      text-align:center;
+      color:#666;
+      margin-top:40px;
+    }
+    footer .footer-contact h3 {
+      margin-bottom:12px;
+      color:#6a4eff;
+      font-size:16px;
+    }
+    footer .footer-contact ul {
+      list-style:none;
+      padding:0;
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      margin-bottom:12px;
+    }
+    footer .footer-contact ul li a i {
+      font-size:28px;
+      color:#6a4eff !important;
+      transition:0.3s;
+    }
+    footer .footer-contact ul li a:hover i {
+      color:#563dd6 !important;
+      transform:scale(1.1);
+    }
+    footer p a {
+      color:#6a4eff;
+      font-weight:500;
+      transition:0.3s;
+    }
+    footer p a:hover { color:#563dd6; }
+
+    /* Responsive */
+    @media (max-width:600px){
+      header h1{font-size:24px}
+      header p{font-size:14px}
+      section{margin:40px auto}
+      nav{gap:12px}
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- HEADER -->
+  <header>
+    <div class="avatar" role="img" aria-label="Kiran Tank Profile Photo"></div>
+    <h1>Kiran Tank</h1>
+    <p>Web Developer & AI Automation Engineer | Rajkot, Gujarat, India</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#employment">Employment</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section-card">
+    <h2>About</h2>
+    <p>Hello, I’m <strong>Kiran Tank</strong> — a passionate <strong>Web Developer & AI Automation Engineer</strong> with over 8+ years of experience. I specialize in full-stack web development using Node.js, PHP (Laravel, CodeIgniter, WordPress), Python, and automation tools like Make.com and n8n. I love building scalable systems and automating workflows for efficiency.</p>
+    <p><a href="assets/Kiran_Tank_Resume.pdf" download><strong>📄 Download My Resume</strong></a></p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section-card">
+    <h2>Skills & Expertise</h2>
+    <ul class="skills">
+      <li><strong>Languages:</strong> PHP, Node.js, Python, JavaScript, C</li>
+      <li><strong>Frameworks:</strong> Laravel, CodeIgniter, Express.js, Django, React.js</li>
+      <li><strong>CMS & ERP:</strong> WordPress, Shopify, Odoo</li>
+      <li><strong>Automation Platforms:</strong> Make.com, n8n, Notion</li>
+      <li><strong>Databases:</strong> MySQL, PostgreSQL, MongoDB</li>
+      <li><strong>Cloud & DevOps:</strong> Microsoft Azure, AWS (S3, EC2), Git, REST APIs, Server Management</li>
+      <li><strong>Payment Integration:</strong> Stripe, PayPal, Webhooks, Google OAuth, API Authentication</li>
+      <li><strong>Other Skills:</strong> Manual QA, Agile Project Management, Team Leadership, Sprint Planning, Client Communication, Task Allocation, MVC Architecture, Canva (Design & Prototyping)</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section-card">
+    <h2>Selected Projects</h2>
+    <div class="project">
+      <h3>GetKeywords</h3>
+      <span>SEO/PPC Keyword Intelligence Tool | Role: Backend Developer (2019–2021)</span>
+      <p>Built and maintained backend API architecture, database design, and cloud deployment.</p>
+      <a href="https://getkeywords.io/" target="_blank">🔗 Visit Website</a>
+    </div>
+    <div class="project">
+      <h3>GetMentions</h3>
+      <span>AI-Powered Mention Monitoring | Role: Backend Developer (2021–2023)</span>
+      <p>Developed scalable APIs for data collection and monitoring, integrated automation pipelines.</p>
+      <a href="https://getmentions.io/" target="_blank">🔗 Visit Website</a>
+    </div>
+    <div class="project">
+      <h3>GetMails</h3>
+      <span>AI Cold Email Outreach | Role: Backend/API Developer (2022–2024)</span>
+      <p>Built automation system for outreach, tracking, and reply handling with Make.com and APIs.</p>
+      <a href="https://getmails.io/" target="_blank">🔗 Visit Website</a>
+    </div>
+    <div class="project">
+      <h3>GetFeedy</h3>
+      <span>Customer Feedback Platform | Role: PHP Developer</span>
+      <p>Implemented core API modules and integrated backend systems with existing CRM structure.</p>
+      <a href="https://getfeedy.io/" target="_blank">🔗 Visit Website</a>
+    </div>
+    <div class="project">
+      <h3>MyAdUNetwork</h3>
+      <span>Ad Network & Referral Platform | Role: Full Stack Developer</span>
+      <p>Created payment systems, referral tracking modules, and backend features using PHP + Stripe.</p>
+      <a href="https://myadunetwork.com/" target="_blank">🔗 Visit Website</a>
+    </div>
+    <div class="project">
+      <h3>Automation Flows</h3>
+      <span>AI & Workflow Automation | Role: Automation Engineer</span>
+      <p>Developed advanced automation systems with Make.com, n8n, and AI tools (Hugging Face).</p>
+      <a href="https://drive.google.com/file/d/1Mq4PlFNHuTCqsPPQjr5eV0Dlox-yA_X0/view" target="_blank">🔗 View Automation</a>
+    </div>
+    <div class="project">
+      <h3>Raytik Client Website</h3>
+      <span>WordPress Website Development | Role: Web Developer</span>
+      <p>Developed a responsive WordPress website with custom themes and essential plugins for the client.</p>
+      <a href="https://raytik.byethost4.com/" target="_blank">🔗 View Showcase</a>
+    </div>
+  </section>
+
+  <!-- EMPLOYMENT -->
+  <section id="employment" class="section-card">
+    <h2>Employment</h2>
+    <div class="job">
+      <h4>DNE Technology Consultants — Web & Automation Developer</h4>
+      <div class="muted">March 2025 – Present</div>
+      <p>Worked on backend modules, automation flows, payment integrations, and client deployments.</p>
+    </div>
+    <div class="job">
+      <h4>Serpent Systems Inc. — Senior Web Developer</h4>
+      <div class="muted">June 2024 – June 2025</div>
+      <p>Developed Laravel/CodeIgniter systems, performed QA testing, and managed deployments.</p>
+    </div>
+    <div class="job">
+      <h4>BlogBing LLP — Senior Developer</h4>
+      <div class="muted">April 2019 – June 2024</div>
+      <p>Led backend architecture for SaaS products like GetKeywords, GetMentions, and GetMails.</p>
+    </div>
+    <div class="job">
+      <h4>ODC IT Services LLP — Web Developer</h4>
+      <div class="muted">April 2017 – June 2019</div>
+      <p>Developed custom PHP and WordPress solutions with responsive UI and dynamic backends.</p>
+    </div>
+    <div class="job">
+      <h4>OMLinux (PWTech) — Junior Web Developer</h4>
+      <div class="muted">March 2017 – November 2017</div>
+      <p>Started career in CMS and PHP development, learning modern frameworks and teamwork.</p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section-card">
+    <h2>Education</h2>
+    <p><strong>B.E. – Computer Engineering</strong><br>Government Engineering College (GEC), Rajkot — CPI: 8.3 / 10</p>
+    <p><strong>Diploma – Computer Engineering</strong><br>AVPTI, Rajkot — CPI: 8.3 / 10</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section-card">
+    <h2>Get in Touch</h2>
+    <p>I am available for freelance and full-time projects. Please use the form below or contact me directly.</p>
+
+    <form id="contactForm" action="https://formspree.io/f/mnnggzzo" method="POST">
+      <div class="form-field">
+        <label for="name">Your Name</label>
+        <input id="name" name="name" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" name="_replyto" type="email" required>
+      </div>
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+      <p id="formStatus"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-contact">
+      <h3>Contact Me</h3>
+      <ul>
+        <li><a href="mailto:Tankkiran.itn@gmail.com"><i class="fas fa-envelope"></i></a></li>
+        <li><a href="tel:+919104519340"><i class="fas fa-phone"></i></a></li>
+        <li><a href="https://github.com/kiranraytank" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://linkedin.com/in/kiran-tank" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+    <p>© <span id="year"></span> Kiran Tank — Rajkot, Gujarat, India</p>
+    <p><a href="#top">↑ Back to top</a></p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.style.color = '#333';
+      status.textContent = 'Sending...';
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          status.style.color = 'green';
+          status.textContent = '✅ Thank you! Your message has been sent.';
+          form.reset();
+          setTimeout(() => status.textContent = '', 4000);
+        } else {
+          status.style.color = 'red';
+          status.textContent = '❌ Something went wrong. Please try again.';
+        }
+      } catch {
+        status.style.color = 'red';
+        status.textContent = '⚠️ Network error. Please email me directly.';
+      }
+    });
+  </script>
+</body>
+</html>
