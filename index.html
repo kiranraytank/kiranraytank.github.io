@@ -16,54 +16,69 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* Reset & Global */
+    /* ==================== Reset & Global ==================== */
     * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'Poppins',sans-serif; background:#f8f9fb; color:#222; line-height:1.6; scroll-behavior:smooth; }
+    body { font-family:'Poppins', sans-serif; background:#f8f9fb; color:#222; line-height:1.6; scroll-behavior:smooth; }
     a { text-decoration:none; color:#6a4eff; }
     a:hover { text-decoration:underline; }
 
-    /* Header */
-    header{
-      background:linear-gradient(135deg,#6a4eff,#9c6df0);
-      color:white;
-      text-align:center;
-      padding:60px 20px 100px;
-      position:relative;
+    /* ==================== Header ==================== */
+    header {
+      background: linear-gradient(135deg,#6a4eff,#9c6df0);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 30px;
     }
-    header .avatar{
-      width:130px;height:130px;border-radius:50%;
-      background:url('assets/avatar.jpg') center/cover no-repeat;
-      margin:0 auto 18px;
+    header .avatar {
+      width:130px; height:130px; border-radius:50%;
+      background: url('assets/avatar.jpg') center/cover no-repeat;
+      margin: 0 auto 18px;
       border:4px solid #fff;
       box-shadow:0 2px 8px rgba(0,0,0,0.2);
     }
-    header h1{font-size:30px;margin-bottom:8px}
-    header p{font-size:15px;color:#eaeaea}
+    header h1 { font-size:30px; margin-bottom:8px; }
+    header p { font-size:15px; color:#eaeaea; }
 
-    nav{
-      position:absolute;bottom:10px;left:0;right:0;
-      display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
+    /* ==================== Navigation ==================== */
+    nav {
+      position: sticky;
+      top:0;
+      background: linear-gradient(5deg,#9c6df0,#6a4eff);
+      padding: 12px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1000;
+      flex-wrap: wrap; /* wrap nav items on smaller screens */
     }
-    nav a{
-      color:white;font-weight:500;font-size:15px;
-      padding:8px 12px;border-radius:4px;
-      transition:all 0.3s ease;
+    nav a {
+      color: white;
+      font-weight: 500;
+      font-size: 15px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
     }
-    nav a:hover{
-      background:rgba(255,255,255,0.2);
-      transform:translateY(-2px);
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
     }
 
-    /* Sections */
-    section{max-width:850px;margin:60px auto;padding:0 20px}
-    h2{
-      color:#6a4eff;
-      font-size:22px;
+    /* ==================== Sections ==================== */
+    section {
+      max-width:850px;
+      margin: 60px auto;
+      padding:0 20px;
+      scroll-margin-top: 75px; /* default nav height offset */
+    }
+    h2 {
+      color: #6a4eff;
+      font-size: 22px;
       border-left:4px solid #6a4eff;
       padding-left:10px;
       margin-bottom:15px;
     }
-    .section-card{
+    .section-card {
       background:#fff;
       border:1px solid #eee;
       padding:20px;
@@ -72,57 +87,56 @@
       box-shadow:0 2px 6px rgba(0,0,0,0.04);
     }
 
-    /* About */
-    #about p{margin-bottom:10px}
-
-    /* Projects */
-    .project{
+    /* ==================== Projects ==================== */
+    .project {
       margin-bottom:18px;
       padding-bottom:12px;
       border-bottom:1px dashed #e2e2e2;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .project:last-child{border:none}
-    .project h3{margin-bottom:4px;font-size:18px}
-    .project span{color:#666;font-size:14px}
-    .project a{
-      color:#6a4eff;
-      font-weight:500;
-      transition:0.3s;
+    .project:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      padding: 10px;
     }
-    .project a:hover{
-      color:#563dd6;
-      text-decoration:underline;
-    }
+    .project:last-child { border:none; }
+    .project h3 { margin-bottom:4px; font-size:18px; }
+    .project span { color:#666; font-size:14px; }
+    .project a { color:#6a4eff; font-weight:500; transition:0.3s; }
+    .project a:hover { color:#563dd6; text-decoration:underline; }
 
-    /* Skills */
-    ul.skills{list-style:disc;margin-left:22px;color:#333}
-    ul.skills li{margin-bottom:6px}
+    /* ==================== Skills ==================== */
+    ul.skills { list-style:disc; margin-left:22px; color:#333; }
+    ul.skills li { margin-bottom:6px; }
 
-    /* Employment */
-    .job{margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed #e2e2e2}
-    .job:last-child{border:none}
-    .job h4{margin-bottom:4px}
-    .muted{color:#666;font-size:14px}
+    /* ==================== Employment ==================== */
+    .job { margin-bottom:18px; padding-bottom:12px; border-bottom:1px dashed #e2e2e2; }
+    .job:last-child { border:none; }
+    .job h4 { margin-bottom:4px; }
+    .muted { color:#666; font-size:14px; }
 
-    /* Contact Form */
-    form{margin-top:14px}
-    .form-field{margin-bottom:14px;display:flex;flex-direction:column}
-    label{font-weight:500;margin-bottom:4px}
-    input,textarea{
-      padding:10px;border:1px solid #ccc;border-radius:5px;font-family:inherit
+    /* ==================== Contact Form ==================== */
+    form { margin-top:14px; }
+    .form-field { margin-bottom:14px; display:flex; flex-direction:column; }
+    label { font-weight:500; margin-bottom:4px; }
+    input, textarea {
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-family:inherit;
     }
-    textarea{resize:vertical;height:120px}
-    button{
-      background:#6a4eff;color:#fff;border:none;
-      padding:10px 20px;border-radius:6px;
-      cursor:pointer;font-weight:600;
+    textarea { resize: vertical; height:120px; }
+    button {
+      background:#6a4eff; color:#fff; border:none;
+      padding:10px 20px; border-radius:6px;
+      cursor:pointer; font-weight:600;
       transition:0.3s ease;
     }
-    button:hover{background:#563dd6;transform:translateY(-2px);}
-    #formStatus{margin-top:8px;font-size:14px}
+    button:hover { background:#563dd6; transform:translateY(-2px); }
+    #formStatus { margin-top:8px; font-size:14px; }
 
-    /* Footer */
-    footer{
+    /* ==================== Footer ==================== */
+    footer {
       background:#fff;
       border-top:1px solid #eee;
       padding:30px 20px;
@@ -130,11 +144,7 @@
       color:#666;
       margin-top:40px;
     }
-    footer .footer-contact h3 {
-      margin-bottom:12px;
-      color:#6a4eff;
-      font-size:16px;
-    }
+    footer .footer-contact h3 { margin-bottom:12px; color:#6a4eff; font-size:16px; }
     footer .footer-contact ul {
       list-style:none;
       padding:0;
@@ -148,23 +158,35 @@
       color:#6a4eff !important;
       transition:0.3s;
     }
-    footer .footer-contact ul li a:hover i {
-      color:#563dd6 !important;
-      transform:scale(1.1);
-    }
-    footer p a {
-      color:#6a4eff;
-      font-weight:500;
-      transition:0.3s;
-    }
+    footer .footer-contact ul li a:hover i { color:#563dd6 !important; transform:scale(1.1); }
+    footer p a { color:#6a4eff; font-weight:500; transition:0.3s; }
     footer p a:hover { color:#563dd6; }
 
-    /* Responsive */
-    @media (max-width:600px){
-      header h1{font-size:24px}
-      header p{font-size:14px}
-      section{margin:40px auto}
-      nav{gap:12px}
+    /* ==================== Media Queries ==================== */
+
+    /* Large tablets / iPad */
+    @media (max-width: 900px) {
+      section { scroll-margin-top: 80px; }
+      nav { gap:16px; }
+      header h1 { font-size:26px; }
+      header p { font-size:15px; }
+    }
+
+    /* Small tablets / landscape phones */
+    @media (max-width: 768px) {
+      section { scroll-margin-top: 85px; }
+      nav a { font-size:14px; padding:7px 10px; }
+      header h1 { font-size:24px; }
+      header p { font-size:14px; }
+    }
+
+    /* Phones / small screens */
+    @media (max-width: 480px) {
+      section { scroll-margin-top: 90px; margin:40px auto; }
+      nav a { font-size:13px; padding:6px 8px; }
+      nav { padding:14px 0; gap:12px; }
+      header h1 { font-size:22px; }
+      header p { font-size:13px; }
     }
   </style>
 </head>
@@ -176,21 +198,29 @@
     <div class="avatar" role="img" aria-label="Kiran Tank Profile Photo"></div>
     <h1>Kiran Tank</h1>
     <p>Web Developer & AI Automation Engineer | Rajkot, Gujarat, India</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#employment">Employment</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
+
+  <!-- NAV BAR -->
+  <nav aria-label="Main Navigation">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#employment">Employment</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <!-- ABOUT -->
   <section id="about" class="section-card">
     <h2>About</h2>
     <p>Hello, I’m <strong>Kiran Tank</strong> — a passionate <strong>Web Developer & AI Automation Engineer</strong> with over 8+ years of experience. I specialize in full-stack web development using Node.js, PHP (Laravel, CodeIgniter, WordPress), Python, and automation tools like Make.com and n8n. I love building scalable systems and automating workflows for efficiency.</p>
-    <p><a href="assets/Kiran_Tank_Resume.pdf" download><strong>📄 Download My Resume</strong></a></p>
+    <!-- <p><a href="assets/Kiran_Tank_Resume.pdf" download><strong>📄 Download My Resume</strong></a></p> -->
+    <p>
+      <a href="assets/Kiran_Tank_Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <strong>📄 Download Resume</strong>
+      </a>
+    </p>
+
   </section>
 
   <!-- SKILLS -->
@@ -246,6 +276,12 @@
       <span>AI & Workflow Automation | Role: Automation Engineer</span>
       <p>Developed advanced automation systems with Make.com, n8n, and AI tools (Hugging Face).</p>
       <a href="https://drive.google.com/file/d/1Mq4PlFNHuTCqsPPQjr5eV0Dlox-yA_X0/view" target="_blank">🔗 View Automation</a>
+    </div>
+    <div class="project">
+      <h3>Raytik News Summary & Trend Tracker</h3>
+      <span>Python + Django Web Application | Role: Full-Stack Developer</span>
+      <p>Developed an AI-powered news aggregation and analysis platform using Python, Django, and NLP models to summarize and track trending topics in real time.</p>
+      <a href="https://kirantank.pythonanywhere.com/" target="_blank">🔗 Live Site</a>
     </div>
     <div class="project">
       <h3>Raytik Client Website</h3>
